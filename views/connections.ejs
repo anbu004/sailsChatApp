@@ -1,0 +1,171 @@
+
+        <div class="content animate-panel">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-4">
+                    <div class="panel rounded shadow" style="background-color:#f1f3f6">
+                        <div class="panel-body" style="background-color:#fff">
+                            <div class="inner-all">
+                                <ul class="list-unstyled">
+                                    <li class="text-center">
+                                        <img class="img-circle img-bordered-primary" data-no-retina="" src="/images/avatar.jpg" alt="User Pic" style="width:150px">
+                                    </li>
+                                    <li class="text-center">
+                                        <h4 class="text-capitalize">admin</h4>
+                                        <p class="text-muted text-capitalize">The Boss</p>
+                                        <p><a href="#" class="btn btn-primary disabled">Connect</a> <a href="inbox" class="btn btn-primary disabled">Message</a></p>
+                                    </li>
+                                    <li>
+                                        <div class="btn-group-vertical btn-block">
+                                            <a href="#" class="btn btn-default"><i class="fa fa-cog pull-right"></i>Edit Account</a>
+                                            <a href="#" class="btn btn-default"><i class="fa fa-sign-out pull-right"></i>Logout</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+                <div class="col-lg-9 col-md-9 col-sm-8">
+                    
+                    <div style="margin-bottom:20px; padding:6px"></div>
+                    <div class="profile-cover">
+                        <div class="cover rounded no-overflow">
+                            <ul class="list-unstyled no-padding hidden-sm hidden-xs cover-menu" style="background-image: url('/images/header.jpg')">
+                                <li><a href="profile"><i class="fa fa-fw fa-clock-o"></i> <span>Timeline</span></a></li>
+                                <li class="active"><a href="profile-connections"><i class="fa fa-fw fa-users"></i><span> Connections </span><small>(1)</small></a></li>
+                                <li><a href="profile-messages"><i class="fa fa-fw fa-envelope"></i> <span>Messages</span> <small>(7 new)</small></a></li>
+                            </ul>
+                        </div><!-- /.cover -->
+                    </div><!-- /.profile-cover -->
+                  <div class="panel rounded shadow">
+                        <div class="panel-heading hbuilt">
+                            <div class="row">
+                                <div class="col-md-6" style="">
+                                    Panel with search form
+                                </div>
+                                <div class="col-md-6" style="">
+                                    <form action="">
+                                        <div class="input-group">
+                                            <input class="form-control input-xs" placeholder="Search something..." name="s" type="text">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-xs btn-default" type="submit">
+                                                    <span class="fa fa-search"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.Lorem
+                                ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.
+                            </p>
+                            <div class="row">
+                                <div class="col-md-3" style="">
+                                    <div class="hpanel">
+                                        <div class="panel-body text-center">
+                                            <img alt="logo" class="img-circle img-small" src="images/Luis_Aven.jpg">
+                                            <div class="m-t-sm">
+                                                <a href="/connect-viewer"><strong>Luis Aven</strong></a>
+                                                <p class="small">CAF</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="col-md-9" style="">
+								 <div class="container">
+  
+
+  <section ng-controller="chatCtrl"> 
+  <form class="form-horizontal">
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2">Name:</label>
+      <div class="col-sm-4">          
+        <input type="text" ng-model="chatData.name" class="form-control" placeholder="Name" ng-readonly="saveName">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2">message:</label>
+      <div class="col-sm-4">          
+        <input type="text" class="form-control"ng-model="chatData.message"  placeholder="message">
+      </div>
+    </div>
+	
+   
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button ng-click="sendData()" class="btn btn-default">Send</button>
+      </div>
+    </div>
+  </form>
+
+  
+  
+ 
+    <div ng-repeat="entry in feedEntries | orderBy:'+'" class="animation feed-entry">
+	<div class="row">
+	  <div class="col-md-1">
+	   <img ng-src="https://dummyimage.com/250x250/000/fff&text={{entry.icon}}" class="img-thumbnail img-responsive img-circle pull-left" ng-class-even="pull-right" ng-class-odd="pull-left " style="width:50px; ">
+	  </div>
+	  <div class="col-md-4">
+	  <b>{{entry.name}}</b>
+	  <br>
+      <small class="meta text-muted">
+        {{entry.message}}
+      </small>
+	  </div>
+	  <div class="col-md-4">
+	  <span class="">{{entry.createdAt | date:'M/d/yyyy HH:mm:ss'}}</span>
+	  </div>
+   </div>
+      
+     
+      
+	 
+    </div>
+	
+  </section>
+</div>
+								 
+								 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<style>
+		
+    .fa {
+      color: #fff;
+    }
+    
+    #userList {
+      display: none;
+    }
+    
+    #loader {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+      top: 40%;
+    }
+		</style>
+		
+		<script src="/js/jquery-2.2.3.min.js"></script>
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-animate.min.js"></script>
+    <script src="/js/angular-moment.min.js"></script>
+    <script src="/js/angular-resource.js"></script>
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+	<script src="/js/app.js"></script>
+		
+		
+
+      

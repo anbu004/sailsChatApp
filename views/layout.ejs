@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html ng-app="chatApp">
+  <head>
+    <title><%=typeof title == 'undefined' ? 'New Sails App' : title%></title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/all.css">
+    <link rel="stylesheet" href="/styles/animate.css">
+    <link rel="stylesheet" href="/styles/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" href="/styles/bootstrap-clockpicker.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap-editable.css">
+    <link rel="stylesheet" href="/styles/bootstrap-select.css">
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/font-awesome.css">
+    <link rel="stylesheet" href="/styles/helper.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/jquery.bootstrap-touchspin.min.css">
+    <link rel="stylesheet" href="/styles/metisMenu.css">
+    <link rel="stylesheet" href="/styles/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/styles/select2-bootstrap.css">
+    <link rel="stylesheet" href="/styles/select2.css">
+    <link rel="stylesheet" href="/styles/star-rating.css">
+    <link rel="stylesheet" href="/styles/static_custom.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/summernote-bs3.css">
+    <link rel="stylesheet" href="/styles/summernote.css">
+    <!--STYLES END-->
+    <style>
+        .topLeft-nav.navbar-nav > li {
+            text-align: center;
+        }
+
+        .topLeft-nav i.fa {
+            font-size: 25px;
+            color: #868686;
+        }
+
+        .topLeft-nav span {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .topLeft-nav.navbar-nav > li > a {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            color: #000;
+        }
+
+        .navbar-default .topLeft-nav.navbar-nav > .active > a, .navbar-default .topLeft-nav.navbar-nav > .active > a:focus, .navbar-default .topLeft-nav.navbar-nav > .active > a:hover {
+            background-color: #e8d768;
+            color: #fff;
+        }
+
+        .topLeft-nav .active i.fa {
+            color: #fff;
+        }
+
+        .user-dd {
+            font-size: 10px;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+
+            .user-dd .dropdown-toggle {
+                padding-top: 7px;
+                padding-bottom: 5px;
+            }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+         
+        header.login-header .lang-dd {
+          float:right;
+        }
+        header.login-header .lang-dd .form-control.bootstrap-select {
+          width:150px;
+          height:35px;
+        }
+        header.login-header .lang-dd .form-control.bootstrap-select .dropdown-toggle {
+          height:35px;
+        }
+        .containerMain {
+          width:100%;
+          min-height:100%;
+        }
+       .panel-body {
+            border: 1px;
+            box-shadow: 1px 1px 10px rgba(0,0,0,0.05),1px 1px 2px rgba(0,0,0,0.1);
+            border-radius: 2px;
+            border-top: 1px solid rgba(0,0,0,0.05)
+            
+        }
+  
+        
+    </style>
+  </head>
+<!-- Simple splash screen-->
+    <div class="splash"> <div class="color-line"></div><div class="splash-title"><h1>Netex</h1></br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. </p><div class="spinner"> <div class="rect1"></div> <div class="rect2"></div> <div class="rect3"></div> <div class="rect4"></div> <div class="rect5"></div> </div> </div> </div>
+    <!--[if lt IE 7]>
+    <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+        <!-- Navigation -->
+        <!-- Main Wrapper -->
+   <div id="header">
+            <div class="color-line">
+            </div>
+            <div id="logo" class="light-version">
+                <span>Netex</span>-<span style="color:red">beta</span>
+            </div>
+            <nav role="navigation">
+                <div class="small-logo">
+                    <span class="text-primary" style="padding-left:20px">Netex</span>-<span style="color:red">beta</span>
+                </div>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav no-borders">
+                        <li class="dropdown user-dd">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/blank.png" style="background-image:url(/images/avatar.jpg);" class="profile-pic"><span style="font-size: 15px; color:#000; vertical-align:middle;"><%= session.User.name %></span> <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="/user/show/<%= session.User.id %>">My Profile</a></li>
+                                <li><a href="/session/destroy">Logout</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                                <i class="pe-7s-speaker" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu hdropdown notification animated flipInX">
+                                <li>
+                                    <a>
+                                        <span class="label label-success">NEW</span> It is a long established.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="label label-warning">WAR</span> There are many variations.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="label label-danger">ERR</span> Contrary to popular belief.
+                                    </a>
+                                </li>
+                                <li class="summary"><a href="#">See all notifications</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle label-menu-corner" href="#" data-toggle="dropdown">
+                                <i class="pe-7s-mail"></i>
+                                <span class="label label-success">4</span>
+                            </a>
+                            <ul class="dropdown-menu hdropdown animated flipInX">
+                                <li>
+                                    <a>
+                                        It is a long established.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        There are many variations.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        Lorem Ipsum is simply dummy.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        Contrary to popular belief.
+                                    </a>
+                                </li>
+                                <li class="summary"><a href="inbox.html">See All Messages</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="search">
+                                <i class="pe-7s-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+  <body class="fixed-navbar light-skin">
+  <div id="wrapper1" style="padding-top:60px">
+    <%- body %>
+
+    </div>
+    <footer class="footer">
+            <div class="col-sm-4 copyright">Netex Inc, All rights reserved 2017</div>
+            <div class="col-sm-4 col-xs-12 text-center"><a href="about">About Us</a> | <a href="contact">Contact Us</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a></div>
+            <div class="col-sm-4 col-xs-12 text-right"><a href="terms">Terms of Use</a> | <a href="privacy">Privacy Policy</a> | <a href="cookie">Cookie Policy</a></div>
+    </footer>
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/NetexPlatform.js"></script>
+    <script src="/js/angular-animate.min.js"></script>
+    <script src="/js/angular-moment.min.js"></script>
+    <script src="/js/angular-resource.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/bootstrap-clockpicker.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/js/bootstrap-editable.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/charts.js"></script>
+    <script src="/js/curvedLines.js"></script>
+    <script src="/js/customValidate.js"></script>
+    <script src="/js/icheck.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/jquery-2.2.3.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="/js/jquery.flot.js"></script>
+    <script src="/js/jquery.flot.pie.js"></script>
+    <script src="/js/jquery.flot.resize.js"></script>
+    <script src="/js/jquery.peity.min.js"></script>
+    <script src="/js/jquery.slimscroll.min.js"></script>
+    <script src="/js/jquery.sparkline.js"></script>
+    <script src="/js/metisMenu.min.js"></script>
+    <script src="/js/mindmup-editabletable.js"></script>
+    <script src="/js/moment.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <script src="/js/numeric-input-example.js"></script>
+    <script src="/js/select2.min.js"></script>
+    <script src="/js/summernote.js"></script>
+    <script src="/js/summernote.min.js"></script>
+    <script src="/js/toastr.min.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

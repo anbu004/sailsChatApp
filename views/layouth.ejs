@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=typeof title == 'undefined' ? 'New Sails App' : title%></title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/all.css">
+    <link rel="stylesheet" href="/styles/animate.css">
+    <link rel="stylesheet" href="/styles/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" href="/styles/bootstrap-clockpicker.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap-editable.css">
+    <link rel="stylesheet" href="/styles/bootstrap-select.css">
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/font-awesome.css">
+    <link rel="stylesheet" href="/styles/helper.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/jquery.bootstrap-touchspin.min.css">
+    <link rel="stylesheet" href="/styles/metisMenu.css">
+    <link rel="stylesheet" href="/styles/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/styles/select2-bootstrap.css">
+    <link rel="stylesheet" href="/styles/select2.css">
+    <link rel="stylesheet" href="/styles/star-rating.css">
+    <link rel="stylesheet" href="/styles/static_custom.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/summernote-bs3.css">
+    <link rel="stylesheet" href="/styles/summernote.css">
+    <!--STYLES END-->
+    <style>
+        .topLeft-nav.navbar-nav > li {
+            text-align: center;
+        }
+
+        .topLeft-nav i.fa {
+            font-size: 25px;
+            color: #868686;
+        }
+
+        .topLeft-nav span {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .topLeft-nav.navbar-nav > li > a {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            color: #000;
+        }
+
+        .navbar-default .topLeft-nav.navbar-nav > .active > a, .navbar-default .topLeft-nav.navbar-nav > .active > a:focus, .navbar-default .topLeft-nav.navbar-nav > .active > a:hover {
+            background-color: #e8d768;
+            color: #fff;
+        }
+
+        .topLeft-nav .active i.fa {
+            color: #fff;
+        }
+
+        .user-dd {
+            font-size: 10px;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+
+            .user-dd .dropdown-toggle {
+                padding-top: 7px;
+                padding-bottom: 5px;
+            }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+         
+        header.login-header .lang-dd {
+          float:right;
+        }
+        header.login-header .lang-dd .form-control.bootstrap-select {
+          width:150px;
+          height:35px;
+        }
+        header.login-header .lang-dd .form-control.bootstrap-select .dropdown-toggle {
+          height:35px;
+        }
+        .containerMain {
+          width:100%;
+          min-height:100%;
+        }
+
+    </style>
+  </head>
+<!-- Simple splash screen-->
+    <div class="splash"> <div class="color-line"></div><div class="splash-title"><h1>Netex</h1></br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. </p><div class="spinner"> <div class="rect1"></div> <div class="rect2"></div> <div class="rect3"></div> <div class="rect4"></div> <div class="rect5"></div> </div> </div> </div>
+    <!--[if lt IE 7]>
+    <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+        <!-- Navigation -->
+        <!-- Main Wrapper -->
+  <body>
+ 
+  <div id="wrapper1" style="background-color:#fff；padding-top:60px">
+    <%- body %>
+
+    </div>
+    <footer class="footer">
+            <div class="col-sm-4 copyright">Netex Inc, All rights reserved 2017</div>
+            <div class="col-sm-4 col-xs-12 text-center"><a href="about">About Us</a> | <a href="contact">Contact Us</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a></div>
+            <div class="col-sm-4 col-xs-12 text-right"><a href="terms">Terms of Use</a> | <a href="privacy">Privacy Policy</a> | <a href="cookie">Cookie Policy</a></div>
+    </footer>
+  
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/NetexPlatform.js"></script>
+    <script src="/js/angular-animate.min.js"></script>
+    <script src="/js/angular-moment.min.js"></script>
+    <script src="/js/angular-resource.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/bootstrap-clockpicker.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/js/bootstrap-editable.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/charts.js"></script>
+    <script src="/js/curvedLines.js"></script>
+    <script src="/js/customValidate.js"></script>
+    <script src="/js/icheck.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/jquery-2.2.3.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="/js/jquery.flot.js"></script>
+    <script src="/js/jquery.flot.pie.js"></script>
+    <script src="/js/jquery.flot.resize.js"></script>
+    <script src="/js/jquery.peity.min.js"></script>
+    <script src="/js/jquery.slimscroll.min.js"></script>
+    <script src="/js/jquery.sparkline.js"></script>
+    <script src="/js/metisMenu.min.js"></script>
+    <script src="/js/mindmup-editabletable.js"></script>
+    <script src="/js/moment.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <script src="/js/numeric-input-example.js"></script>
+    <script src="/js/select2.min.js"></script>
+    <script src="/js/summernote.js"></script>
+    <script src="/js/summernote.min.js"></script>
+    <script src="/js/toastr.min.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>
